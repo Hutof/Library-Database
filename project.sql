@@ -1,4 +1,4 @@
-CREATE TABLE MEMBER )
+CREATE TABLE MEMBER (
 ID INT NOT NULL PRIMARY KEY ,
 F_NAME VARCHAR(20) NOT NULL ,
 M_NAME VARCHAR(20) ,
@@ -17,7 +17,7 @@ create table libraryResource(
 R_number int primary key ,
 availability varchar(20) not null
 );
-CREATE TABLE LOAN )
+CREATE TABLE LOAN (
 L_Number INT PRIMARY KEY NOT NULL,
 Library_Address VARCHAR(20) ,
 DueDate date ,
@@ -35,7 +35,7 @@ CONSTRAINT bro PRIMARY key (L_Number,M_ID) ,
 foreign key (L_Number) references LOAN(L_Number) on delete cascade ,
 foreign key (M_ID) references MEMBER(ID) on delete cascade
 );
-CREATE TABLE PRIVILEGE )
+CREATE TABLE PRIVILEGE (
 P_Number INT NOT NULL PRIMARY KEY,
 P_NAME VARCHAR(30) NOT NULL ,
 loanperiod VARCHAR(30) NOT NULL,
@@ -46,7 +46,7 @@ M_ID int not null,
 foreign key (M_ID) references MEMBER(ID) on delete cascade ,
 foreign key (Rno) references libraryResource(R_number) on delete cascade
 );
-CREATE TABLE FINEs )
+CREATE TABLE FINEs (
 f_number INT NOT NULL ,
 AMOUNT INT NOT NULL ,
 STATUS VARCHAR(30) ,
@@ -89,7 +89,7 @@ T_Location VARCHAR(50) NOT NULL,
 Rno int not null ,
 foreign key (Rno) references libraryResource(R_number) on delete cascade
 );
-CREATE TABLE JOURNAL )
+CREATE TABLE JOURNAL (
 J_number INT NOT NULL PRIMARY KEY,
 J_State VARCHAR(50) NOT NULL ,
 J_Title VARCHAR(50) ,
